@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt.android)
+    alias(libs.plugins.kotlin.searialization)
 }
 
 android {
@@ -72,4 +73,10 @@ dependencies {
     // Room Database
     implementation(libs.room.runtime)
     ksp(libs.room.compiler)
+
+    // Navigation
+    implementation(libs.androidx.navigation)
+
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
 }
