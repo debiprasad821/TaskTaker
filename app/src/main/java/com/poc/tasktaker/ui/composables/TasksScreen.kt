@@ -17,20 +17,24 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
 
 
 @Composable
-fun TasksScreenRoute() {
-    TasksScreen()
+fun TasksScreenRoute(
+    navigateToAddTask: () -> Unit
+) {
+    TasksScreen(
+        onAddTask = navigateToAddTask
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-@Preview
-fun TasksScreen() {
+fun TasksScreen(
+    onAddTask: () -> Unit
+) {
     var showDatePicker by remember { mutableStateOf(false) }
 
     Scaffold { paddingValues ->
@@ -43,7 +47,7 @@ fun TasksScreen() {
                 modifier = Modifier
                     .clickable(
                         onClick = {
-                            showDatePicker = true
+                            onAddTask()
                         }
                     ),
                 text = "Tasks Screen"
