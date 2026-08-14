@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.poc.tasktaker.ui.composables.AddTaskScreenRoute
-import com.poc.tasktaker.ui.composables.TasksScreenRoute
+import com.poc.tasktaker.ui.composables.tasklist.TasksScreenRoute
 
 @Composable
 fun AppNavigation() {
@@ -16,11 +16,7 @@ fun AppNavigation() {
         startDestination = TaskList
     ) {
         composable<TaskList> {
-            TasksScreenRoute(
-                navigateToAddTask = {
-                    navController.navigate(AddTask)
-                }
-            )
+            TasksScreenRoute()
         }
 
         composable<AddTask> {
