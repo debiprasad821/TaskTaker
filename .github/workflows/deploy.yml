@@ -35,8 +35,8 @@ jobs:
       - name: Upload to Google Drive
         uses: adityak74/google-drive-upload-git-action@main
         with:
-          credentials: ${{ secrets.MAIN_SERVICE_ACCOUNT_JSON }}
+          credentials: ${{ secrets.SERVICE_ACCOUNT_JSON }}
           filename: app/build/outputs/apk/debug/app-debug.apk
-          folderId: ${{ secrets.GOOGLE_DRIVE_FOLDER_ID }}
+          folderId: ${{ secrets.DRIVE_ID }}
           name: "TaskTaker-${{ github.run_number }}.apk"
           overwrite: false
