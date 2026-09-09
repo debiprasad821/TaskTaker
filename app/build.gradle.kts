@@ -69,14 +69,22 @@ dependencies {
     // Hilt Dependencies
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
+    implementation(libs.androidx.hilt.work)
+    ksp(libs.androidx.hilt.compiler)
 
     // Room Database
-    implementation(libs.room.runtime)
-    ksp(libs.room.compiler)
+//    implementation(libs.room.runtime)
+//    ksp(libs.room.compiler)
 
     // Navigation
     implementation(libs.androidx.navigation)
 
     // Serialization
     implementation(libs.kotlinx.serialization.json)
+
+    // Work Manager
+    implementation(libs.androidx.work.manager)
+    implementation(project(":core:work"))
+    implementation(project(":feature:task"))
 }
