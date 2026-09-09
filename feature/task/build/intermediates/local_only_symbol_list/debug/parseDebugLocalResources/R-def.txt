@@ -1,0 +1,4 @@
+R_DEF: Internal format may change without notice
+local
+font poppins_regular
+font poppins_semibold

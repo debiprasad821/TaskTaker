@@ -40,3 +40,4 @@ jobs:
           folderId: ${{ secrets.DRIVE_ID }}
           name: "TaskTaker-${{ github.run_number }}.apk"
           overwrite: false
+          supportAllDrives: true
