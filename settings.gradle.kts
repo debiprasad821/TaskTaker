@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -24,3 +25,8 @@ dependencyResolutionManagement {
 
 rootProject.name = "TaskTaker"
 include(":app")
+include(":data")
+include(":core:work")
+include(":core:notifications")
+include(":core:ui")
+include(":feature:task")
