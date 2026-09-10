@@ -1,4 +1,4 @@
-name: Generate APK and Upload to Drive
+name: Generate APK and Upload to Firebase
 
 on:
   push:
@@ -31,13 +31,11 @@ jobs:
       - name: Build Debug APK
         run: ./gradlew assembleDebug
 
-      # 5. Upload the generated APK to your Google Driv
-      - name: Upload to Google Drive
-        uses: adityak74/google-drive-upload-git-action@main
+      # Upload to Firebase App Distribution
+      - name: Upload to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
-          credentials: ${{ secrets.SERVICE_ACCOUNT_JSON }}
-          filename: app/build/outputs/apk/debug/app-debug.apk
-          folderId: ${{ secrets.DRIVE_ID }}
-          name: "TaskTaker-${{ github.run_number }}.apk"
-          overwrite: false
-          supportAllDrives: true
+          appId: ${{ secrets.FIREBASE_APP_ID }}
+          serviceCredentialsFileContent: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          groups: qa-team
+          file: app/build/outputs/apk/debug/app-debug.apk

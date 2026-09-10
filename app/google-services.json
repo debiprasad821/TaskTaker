@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "339125838543",
+    "project_id": "tasktaker-d0533",
+    "storage_bucket": "tasktaker-d0533.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339125838543:android:87eb5b92911f6497108dba",
+        "android_client_info": {
+          "package_name": "com.poc.tasktaker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASEsCAyiwrgaQo24kstZwrAMYm6m0eOTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
